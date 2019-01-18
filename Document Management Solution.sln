@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Document Management Solution", "Document Management Solution\Document Management Solution.csproj", "{3920361A-8A24-45FB-B0F1-F28F0CEBAF5E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Document Manager", "Document Management Solution\Document Manager.csproj", "{3920361A-8A24-45FB-B0F1-F28F0CEBAF5E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Document ManagerTests", "Document ManagerTests\Document ManagerTests.csproj", "{2CC5C12F-FDF4-4E6D-85FC-0CF8BA3D9E7B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{3920361A-8A24-45FB-B0F1-F28F0CEBAF5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3920361A-8A24-45FB-B0F1-F28F0CEBAF5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3920361A-8A24-45FB-B0F1-F28F0CEBAF5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CC5C12F-FDF4-4E6D-85FC-0CF8BA3D9E7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CC5C12F-FDF4-4E6D-85FC-0CF8BA3D9E7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CC5C12F-FDF4-4E6D-85FC-0CF8BA3D9E7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CC5C12F-FDF4-4E6D-85FC-0CF8BA3D9E7B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
