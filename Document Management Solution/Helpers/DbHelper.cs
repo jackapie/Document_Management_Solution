@@ -16,5 +16,12 @@ namespace Document_Management_Solution.Helpers
 
             return document;
         }
+
+        public DocumentModel GetByTitle(string Title)
+        {
+            var context = new DocManagerContext();
+            var document = context.DocumentModels.Where((e) => e.DocumentTitle == Title).First();
+            return document;
+        }
     }
 }
