@@ -31,6 +31,7 @@ namespace Document_Management_Solution.Helpers.Tests
             var document = dbHelper.GetByTitle("SomeTitle6");
             var fileName = document.FileName;
             Assert.AreEqual("TextFile1.txt", fileName);
+            CollectionAssert.AreEqual(file, document.File);
         }
     }
 
