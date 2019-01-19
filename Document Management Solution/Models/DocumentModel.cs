@@ -11,5 +11,6 @@ namespace Document_Management_Solution.Models
         public string DocumentId { get; set; }
         public string DocumentTitle { get; set; }
         public byte[] File {get; set;}
+        public string FileName { get; set; }
     }
 }

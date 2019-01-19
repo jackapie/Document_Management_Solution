@@ -145,6 +145,10 @@
     <Compile Include="Migrations\201901181457459_add DocumentId column.Designer.cs">
       <DependentUpon>201901181457459_add DocumentId column.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201901191125533_add FileName column.cs" />
+    <Compile Include="Migrations\201901191125533_add FileName column.Designer.cs">
+      <DependentUpon>201901191125533_add FileName column.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DocManagerContext.cs" />
     <Compile Include="Models\DocumentModel.cs" />
@@ -209,6 +213,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201901181457459_add DocumentId column.resx">
       <DependentUpon>201901181457459_add DocumentId column.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901191125533_add FileName column.resx">
+      <DependentUpon>201901191125533_add FileName column.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -1,6 +1,7 @@
 ﻿using Document_Management_Solution.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 
@@ -33,15 +34,24 @@ namespace Document_Management_Solution.Helpers
             return document;
         }
 
-        public void AddDocument(string DocumentTitle, string DocumentId, byte[] File)
+
+        public void CreateDocument(string DocumentTitle, string DocumentId, HttpPostedFileBase upload)
         {
             var context = new DocManagerContext();
-            var document = new DocumentModel();
+            var document = new DocumentModel
+            {
+                DocumentTitle = DocumentTitle,
+                DocumentId = DocumentId,
+                FileName = Path.GetFileName(upload.FileName)
+            };
+
+            var reader = new BinaryReader(upload.InputStream);
+            document.File = reader.ReadBytes(upload.ContentLength);
+
             context.DocumentModels.Add(document);
-            document.DocumentTitle = DocumentTitle;
-            document.DocumentId = DocumentId;
-            document.File = File;
             context.SaveChanges();
         }
+
+
     }
 }

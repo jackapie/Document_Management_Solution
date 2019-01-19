@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Document_Management_Solution.Helpers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,18 +14,10 @@ namespace Document_Management_Solution.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public void UploadDocument(string DocumentTitle, string DocumentId, HttpPostedFileBase upload)
         {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+            var dbHelper = new DbHelper();
+            dbHelper.CreateDocument(DocumentTitle, DocumentId, upload);
         }
     }
 }
