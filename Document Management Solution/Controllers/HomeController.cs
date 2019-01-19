@@ -16,6 +16,16 @@ namespace Document_Management_Solution.Controllers
             return View();
         }
 
+        public ActionResult DocumentUploadPage()
+        {
+            return View();
+        }
+
+        public ActionResult DocumentSearchPage()
+        {
+            return View();
+        }
+
         [HttpPost]
         public void UploadDocument(string DocumentTitle, string DocumentId, HttpPostedFileBase upload)
         {

@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "DocumentUpload";
+}
+
+<h2>Upload a Document</h2>
+
+<form action="~/Home/UploadDocument" method="post" enctype="multipart/form-data">
+    Title:       <input type="text" name="DocumentTitle" value="" /><br /><br />
+
+    Document Id: <input type="text" name="DocumentId" value="" /><br /><br />
+
+    Upload document: <input type="file" name="upload" /><br /><br />
+
+    <input type="submit" value="Submit Document" />
+
+</form>
+
