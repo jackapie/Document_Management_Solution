@@ -45,8 +45,13 @@ namespace Document_Management_Solution.Helpers
                 FileName = Path.GetFileName(upload.FileName)
             };
 
-            var reader = new BinaryReader(upload.InputStream);
-            document.File = reader.ReadBytes(upload.ContentLength);
+            // BinaryReader is an IDisposable, 'using' ensures disposal of reader
+            using (var reader = new BinaryReader(upload.InputStream))
+            {
+                document.File = reader.ReadBytes(upload.ContentLength);
+
+            }
+            
 
             context.DocumentModels.Add(document);
             context.SaveChanges();

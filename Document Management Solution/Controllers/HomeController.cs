@@ -16,8 +16,12 @@ namespace Document_Management_Solution.Controllers
 
         public void UploadDocument(string DocumentTitle, string DocumentId, HttpPostedFileBase upload)
         {
-            var dbHelper = new DbHelper();
-            dbHelper.CreateDocument(DocumentTitle, DocumentId, upload);
+            if (upload != null && upload.ContentLength > 0)
+            {
+                var dbHelper = new DbHelper();
+                dbHelper.CreateDocument(DocumentTitle, DocumentId, upload);
+            }
+
         }
     }
 }
