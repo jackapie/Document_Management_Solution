@@ -26,8 +26,13 @@ namespace Document_Management_Solution.Controllers
             return View();
         }
 
+        public ActionResult DocumentSubmittedPage()
+        {
+            return View();
+        }
+
         [HttpPost]
-        public void UploadDocument(string DocumentTitle, string DocumentId, HttpPostedFileBase upload)
+        public ActionResult UploadDocument(string DocumentTitle, string DocumentId, HttpPostedFileBase upload)
         {
             if (upload != null && upload.ContentLength > 0)
             {
@@ -43,6 +48,8 @@ namespace Document_Management_Solution.Controllers
 
                 }
             }
+
+            return View("DocumentSubmittedPage");
 
         }
     }

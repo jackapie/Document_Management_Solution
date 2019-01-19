@@ -192,6 +192,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\DocumentSearchPage.cshtml" />
     <Content Include="Views\Home\DocumentUploadPage.cshtml" />
+    <Content Include="Views\Home\DocumentSubmittedPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
