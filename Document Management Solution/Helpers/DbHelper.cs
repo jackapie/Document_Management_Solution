@@ -35,24 +35,18 @@ namespace Document_Management_Solution.Helpers
         }
 
 
-        public void CreateDocument(string DocumentTitle, string DocumentId, HttpPostedFileBase upload)
+        public void CreateDocument(string DocumentTitle, string DocumentId, byte[] fileByteArray, string fileName)
         {
             var context = new DocManagerContext();
             var document = new DocumentModel
             {
                 DocumentTitle = DocumentTitle,
                 DocumentId = DocumentId,
-                FileName = Path.GetFileName(upload.FileName)
+                File = fileByteArray,
+                FileName = fileName
             };
 
-            // BinaryReader is an IDisposable, 'using' ensures disposal of reader
-            using (var reader = new BinaryReader(upload.InputStream))
-            {
-                document.File = reader.ReadBytes(upload.ContentLength);
-
-            }
-            
-
+                    
             context.DocumentModels.Add(document);
             context.SaveChanges();
         }
