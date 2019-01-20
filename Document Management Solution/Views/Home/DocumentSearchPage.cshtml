@@ -25,8 +25,7 @@ grid.Column("DocumentTitle", "Document Title"),
 grid.Column("DocumentId", "Document Id"),
 grid.Column("FileName", "File"),
 grid.Column("", "Download", format: (documentModel) => {
-var url = "Download/" + documentModel.Id;
-return Html.Raw("<a href=\"" + url + "\">Download File</a>");
+    return Html.ActionLink("Download File", "Download", new { Id = documentModel.Id });
     })))
 
 
