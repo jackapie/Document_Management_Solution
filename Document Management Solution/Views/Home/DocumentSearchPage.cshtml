@@ -2,6 +2,7 @@
 @{
     ViewBag.Title = "DocumentSearch";
     var grid = new WebGrid(Model);
+
 }
 
 <h2>Search for a Document</h2>
@@ -13,17 +14,22 @@
 
     <input type="submit" value="Search" /><br />
 
-    <div id="grid">
-        @grid.GetHtml( columns: grid.Columns(
-       grid.Column("DocumentTitle", "Document Title"),
-       grid.Column("DocumentId", "Document Id"),
-       grid.Column("FileName", "File"), 
-       grid.Column(header: "Download", format: @<input type="button" class="download" value="Download File"/>)
-       
 
-       ))
-    </div>
 
 </form>
+
+<div id="grid">
+
+    @grid.GetHtml(columns: grid.Columns(
+grid.Column("DocumentTitle", "Document Title"),
+grid.Column("DocumentId", "Document Id"),
+grid.Column("FileName", "File"),
+grid.Column("", "Download", format: (documentModel) => {
+var url = "Download/" + documentModel.Id;
+return Html.Raw("<a href=\"" + url + "\">Download File</a>");
+    })))
+
+
+</div>
 
 

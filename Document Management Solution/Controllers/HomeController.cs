@@ -54,5 +54,24 @@ namespace Document_Management_Solution.Controllers
             return View("DocumentSubmittedPage");
 
         }
+
+        public ActionResult Download(int Id)
+        {
+            var dbHelper = new DbHelper();
+            var document = dbHelper.GetById(Id);
+            var file = new System.Net.Mime.ContentDisposition
+            {
+                
+                FileName = document.FileName,
+
+                // always prompt the user for downloading, set to true if you want 
+                // the browser to try to show the file inline
+                Inline = false,
+            };
+
+            var contentType = document.GetType().ToString();
+            Response.AppendHeader("Content-Disposition", file.ToString());
+            return File(document.File, contentType);
+        }
     }
 }
