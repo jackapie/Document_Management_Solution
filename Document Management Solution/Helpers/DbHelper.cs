@@ -18,20 +18,24 @@ namespace Document_Management_Solution.Helpers
             return document;
         }
 
-        public DocumentModel GetByDocumentId(string Id)
+       
+
+        public List<DocumentModel> GetDocuments(string DocumentTitle, string DocumentId)
         {
             var context = new DocManagerContext();
+            IQueryable<DocumentModel> documents = context.DocumentModels;
 
-            var document = context.DocumentModels.Where((e) => e.DocumentId == Id).First();
+            if (string.IsNullOrEmpty(DocumentTitle) == false)
+            {
+                documents = documents.Where((e) => e.DocumentTitle.Contains(DocumentTitle));
+            }
 
-            return document;
-        }
+            if (string.IsNullOrEmpty(DocumentId) == false)
+            {
+                documents = documents.Where((e) => e.DocumentId.Contains(DocumentId));
+            }
 
-        public DocumentModel GetByTitle(string Title)
-        {
-            var context = new DocManagerContext();
-            var document = context.DocumentModels.Where((e) => e.DocumentTitle == Title).First();
-            return document;
+            return documents.ToList();
         }
 
 
@@ -46,7 +50,7 @@ namespace Document_Management_Solution.Helpers
                 FileName = fileName
             };
 
-                    
+
             context.DocumentModels.Add(document);
             context.SaveChanges();
         }

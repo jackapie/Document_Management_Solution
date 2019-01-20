@@ -1,6 +1,16 @@
-﻿
+﻿@model List<Document_Management_Solution.Models.DocumentModel>
 @{
     ViewBag.Title = "DocumentSearch";
+    var grid = new WebGrid(Model);
 }
 
 <h2>Search for a Document</h2>
+
+Document Title: <input type="text" name="DocumentTitle" value=""/><br /><br />
+
+Document Id: <input type="text" name="DocumentId" value=""/><br /><br />
+
+
+<div id="grid">
+    @grid.GetHtml()
+</div>

@@ -21,9 +21,11 @@ namespace Document_Management_Solution.Controllers
             return View();
         }
 
-        public ActionResult DocumentSearchPage()
+        public ActionResult DocumentSearchPage(string DocumentTitle, string DocumentId)
         {
-            return View();
+            var dbHelper = new DbHelper();
+            var data = dbHelper.GetDocuments(DocumentTitle, DocumentId);
+            return View(data);
         }
 
         public ActionResult DocumentSubmittedPage()
