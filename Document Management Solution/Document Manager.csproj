@@ -152,6 +152,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DocManagerContext.cs" />
     <Compile Include="Models\DocumentModel.cs" />
+    <Compile Include="Models\WebDocumentModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

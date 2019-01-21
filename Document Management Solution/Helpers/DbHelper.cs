@@ -20,10 +20,11 @@ namespace Document_Management_Solution.Helpers
 
        
 
-        public List<DocumentModel> GetDocuments(string DocumentTitle, string DocumentId)
+        public List<WebDocumentModel> GetDocuments(string DocumentTitle, string DocumentId)
         {
             var context = new DocManagerContext();
             IQueryable<DocumentModel> documents = context.DocumentModels;
+
 
             if (string.IsNullOrEmpty(DocumentTitle) == false)
             {
@@ -35,7 +36,13 @@ namespace Document_Management_Solution.Helpers
                 documents = documents.Where((e) => e.DocumentId.Contains(DocumentId));
             }
 
-            return documents.ToList();
+            return documents.Select((e) => new WebDocumentModel()
+            {
+                Id = e.Id,
+                DocumentId = e.DocumentId,
+                DocumentTitle = e.DocumentTitle,
+                FileName = e.FileName
+            }).ToList();
         }
 
 

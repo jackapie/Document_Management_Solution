@@ -28,8 +28,9 @@ namespace Document_Management_Solution.Helpers.Tests
             var file = File.ReadAllBytes("TextFile1.txt");
             dbHelper.CreateDocument("SomeTitle6", "Document6", file, "TextFile1.txt");
 
-            var document = dbHelper.GetDocuments("SomeTitle6", "").First();
-            var fileName = document.FileName;
+            var webDocument = dbHelper.GetDocuments("SomeTitle6", "").First();
+            var fileName = webDocument.FileName;
+            var document = dbHelper.GetById(webDocument.Id);
             Assert.AreEqual("TextFile1.txt", fileName);
             CollectionAssert.AreEqual(file, document.File);
         }
