@@ -22,3 +22,26 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.navbar {
+    background-color: white;
+}
+
+    .navbar a.navbar-brand, .navbar-inverse .navbar-nav > li > a.navbar-brand, h2, form, #grid th, #grid a {
+        color: #2d312f;
+    }
+
+    .navbar a.navbar-brand:hover, h1, .navbar-inverse .navbar-nav > li > a.navbar-brand:hover {
+        color: #4765a0;
+    }
+
+
+#grid td, #grid th {
+    padding: 5px;
+    
+} 
+
+.inputLabel{
+    width: 100px; 
+    display:inline-block;
+}
